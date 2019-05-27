@@ -6,7 +6,7 @@ class Main extends PureComponent {
 
     return (
       <div>
-        Home
+
       </div>
     );
 

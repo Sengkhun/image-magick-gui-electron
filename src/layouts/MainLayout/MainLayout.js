@@ -5,9 +5,13 @@ import {
   withStyles 
 } from '@material-ui/core';
 
+import { Toolbar } from '../../components';
+
 const styles = theme => ({
   root: {
-    display: 'flex'
+    display: 'flex',
+    height: '100%',
+    position: 'relative'
   },
   content: {
     flexGrow: 1
@@ -26,7 +30,9 @@ class MainLayout extends PureComponent {
     return (
       <div className={classes.root}>
         <CssBaseline/>
-
+        
+        <Toolbar/>
+        
         <main className={classes.content}>
           { children }
         </main>
