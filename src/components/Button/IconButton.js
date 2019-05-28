@@ -1,14 +1,12 @@
 import React, { PureComponent } from 'react';
 import classNames from "classnames";
-import { 
-  Icon,
-  withStyles 
-} from '@material-ui/core';
+import { withStyles } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
     display: 'flex',
-    padding: `${theme.spacing(.3)}px ${theme.spacing(.8)}px`,
+    padding: `${theme.spacing(.7)}px ${theme.spacing(1.2)}px`,
+    marginBottom: theme.spacing(1),
     borderRadius: 4,
     cursor: 'pointer'
   },
@@ -28,17 +26,17 @@ const styles = theme => ({
 
 class IconButton extends PureComponent {
   render() {
-
-    const { classes, selected } = this.props;
-
+    const { classes, title, icon, selected } = this.props;
     return (
-      <div className={classNames(
-        classes.root,
-        selected ? classes.selected : classes.hover
-      )}>
-        <Icon className={classes.icon}>
-          rotate_left
-        </Icon>
+      <div 
+        title={title}
+        className={classNames(
+          classes.root,
+          selected ? classes.selected : classes.hover
+        )}
+      >
+        <i className={classNames(classes.icon, 'fas', icon)}>
+        </i>
       </div>
     )
   }
