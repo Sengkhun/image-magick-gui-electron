@@ -1,13 +1,18 @@
 import React, { PureComponent } from 'react';
-import { Switch } from 'react-router-dom';
+import { withRouter, Switch } from 'react-router-dom';
 
 import AppRoute from './AppRoute';
+import history from './history';
 import url from './url';
 
 import { MainLayout } from '../layouts';
 import { Main } from '../pages';
 
-class App extends PureComponent {
+class Route extends PureComponent {
+
+  componentDidMount() {
+    history.push(url.main.index);
+  }
 
   render() {
     return (
@@ -25,4 +30,4 @@ class App extends PureComponent {
   }
 }
 
-export default App;
+export default withRouter(Route);
